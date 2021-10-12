@@ -441,10 +441,11 @@ module.exports.forgotReset = async (req, res) => {
 async function emailSent(Body, generate) {
   const transporter = await nodemailer.createTransport({
     port: 465,
-    host: "smtp.gmail.com",
+    //comment out host 
+    //host: "smtp.gmail.com",
     auth: {
-      user: "emsdemo04@gmail.com",
-      pass: "Emaster@123456#",
+      user: "", //your email
+      pass: "", // your pass
     },
     secure: true,
   });
