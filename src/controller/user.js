@@ -440,8 +440,8 @@ module.exports.forgotReset = async (req, res) => {
 //function of sending mail
 async function emailSent(Body, generate) {
   const transporter = await nodemailer.createTransport({
-    port: 465,
-    //comment out host 
+    //port: 465,
+    //comment out host and port
     //host: "smtp.gmail.com",
     auth: {
       user: "", //your email
@@ -451,7 +451,7 @@ async function emailSent(Body, generate) {
   });
   let token="1234";
   const mailData = {
-    from: "emsdemo04@gmail.com",
+    from: "", // your email id
     to: Body.email,
     subject: "verifying",
     text: "Hello, user has been signed up successfully",
